@@ -28,7 +28,7 @@
         height:200px;
         /* background-color:cornsilk;
         color:black; */
-        border: 5px solid darkgray;
+        border-left: 5px solid darkgray;
       
         border-radius: 15%;
         padding-top: 20px;
@@ -173,11 +173,11 @@
               </span>
               </div>
             </div>
-            <div class="col-sm-4 mt-5 mx-auto profile"> 
-              Name:<span id="nameh" class="ml-5 pl-5"></span><br>
+            <div class="col-sm-4 mt-5  profile"> 
+                Name:<span id="nameh" class="ml-5 pl-5"></span><br>
               
-              Date:<span id="Desigh" class="ml-5 pl-5"></span><br>
-              Time:<span id="Timeh" class="ml-5 pl-5"></span><br>
+                Date:<span id="Desigh" class="ml-5 pl-5"></span><br>
+                Time:<span id="Timeh" class="ml-5 pl-5"></span><br>
             </div>
         </div>
     </div>
@@ -256,8 +256,8 @@ function setGaugeValue(gauge, value) {
 fetch("https://blr1.blynk.cloud/external/api/get?token=s2291g1WHa7xVg5Sz8MD1Kx2nJ_BfwpL&v6") // virtual pin
          .then(response => response.json())
          .then(data => {
-          // setGaugeValue(gaugeElement, data/100);
-          setGaugeValue(gaugeElement,30/100)
+        //   setGaugeValue(gaugeElement, data/100);
+        setGaugeValue(gaugeElement, 45/100);
          })
 
 
@@ -305,8 +305,8 @@ var pad = function(tar) {}
          .then(data => {
           console.log(data);
           var value=data;
-          // gauge0.setValueAnimated(value, 1);
-          gauge0.setValueAnimated(25, 1);
+        //   gauge0.setValueAnimated(value, 1);
+        gauge0.setValueAnimated(30, 1);
          })
 
 
@@ -316,24 +316,20 @@ var pad = function(tar) {}
          .then(data => {
           console.log(data);
           var value3=data;
-          // gauge3.setValueAnimated(value3, 1);
-          gauge3.setValueAnimated(30, 1);
+        //   gauge3.setValueAnimated(value3, 1);
+        gauge3.setValueAnimated(50, 1);
          })
 
         //  Bin
 
-        // fetch("https://blr1.blynk.cloud/external/api/get?token=zfCMt9IIeUhhKmPMK0Au1E7IDm8Tfi9l&v0") // virtual pin
-        //  .then(response => response.json())
-        //  .then(data => {
-        //   console.log(data);
-        //   var value1=data;
-        //   gauge1.setValueAnimated(value1, 1);
-        //  })
-        fetch(" https://api.thingspeak.com/channels/1717065/feeds.json?results=100").then(response=>response.json()).then(data=>{
-          var value1=data.feeds[99].field1//replace 35 with 99
-          console.log("value1 ",value1)
+        fetch("https://blr1.blynk.cloud/external/api/get?token=zfCMt9IIeUhhKmPMK0Au1E7IDm8Tfi9l&v0") // virtual pin
+         .then(response => response.json())
+         .then(data => {
+          console.log(data);
+          var value1=data;
           gauge1.setValueAnimated(value1, 1);
-        })
+         })
+
         
         // gauge1.setValueAnimated(value1);
 
